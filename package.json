@@ -1,11 +1,11 @@
 {
-  "name": "@eeacms/volto-addon-template",
+  "name": "@codesyntax/volto-publiccontracts-theme",
   "version": "0.1.0",
-  "description": "@eeacms/volto-addon-template: Volto add-on",
+  "description": "@codesyntax/volto-publiccontracts-theme: Volto add-on",
   "main": "src/index.js",
-  "author": "European Environment Agency: IDM2 A-Team",
+  "author": "CodeSyntax",
   "license": "MIT",
-  "homepage": "https://github.com/eea/volto-addon-template",
+  "homepage": "https://gitlab.com/codesyntax/volto-publiccontracts-theme",
   "keywords": [
     "volto-addon",
     "volto",
@@ -14,11 +14,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:eea/volto-addon-template.git"
+    "url": "git@gitlab.com:codesyntax/volto-publiccontracts-theme.git"
   },
   "dependencies": {
-    "@plone/scripts": "*"
+    "@plone/scripts": "*",
+    "@eeacms/volto-react-table-widget": "0.1.1"
   },
+  "addons": [
+    "@eeacms/volto-react-table-widget"
+  ],
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
