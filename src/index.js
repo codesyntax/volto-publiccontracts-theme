@@ -10,8 +10,8 @@ const applyConfig = (config) => {
   config.views = {
     ...config.views,
     contentTypesViews: {
-      ...config.contentTypesViews,
-      'Contract': ContractView,
+      ...config.views.contentTypesViews,
+      Contract: ContractView,
     },
   };
   return config;
