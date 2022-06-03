@@ -1,11 +1,11 @@
 {
   "name": "@codesyntax/volto-publiccontracts-theme",
   "version": "0.1.0",
-  "description": "@codesyntax/volto-publiccontracts-theme: Volto add-on",
+  "description": "Volto add-on to show public contract information",
   "main": "src/index.js",
   "author": "CodeSyntax",
   "license": "MIT",
-  "homepage": "https://gitlab.com/codesyntax/volto-publiccontracts-theme",
+  "homepage": "https://github.com/codesyntax/volto-publiccontracts-theme",
   "keywords": [
     "volto-addon",
     "volto",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:codesyntax/volto-publiccontracts-theme.git"
+    "url": "git@github.com:codesyntax/volto-publiccontracts-theme.git"
   },
   "dependencies": {
     "@plone/scripts": "*",
@@ -45,5 +45,8 @@
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "cypress:run": "if [ -d ./project ]; then NODE_ENV=development ./project/node_modules/cypress/bin/cypress run; else NODE_ENV=development ../../../node_modules/cypress/bin/cypress run; fi",
     "cypress:open": "if [ -d ./project ]; then NODE_ENV=development ./project/node_modules/cypress/bin/cypress open; else NODE_ENV=development ../../../node_modules/cypress/bin/cypress open; fi"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
