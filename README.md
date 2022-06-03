@@ -2,24 +2,9 @@
 
 [![Releases](https://img.shields.io/github/v/release/eea/volto-publiccontracts-theme)](https://github.com/eea/volto-publiccontracts-theme/releases)
 
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-publiccontracts-theme%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-publiccontracts-theme/job/master/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-master&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-master)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-master&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-master)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-master&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-master)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-master&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-master)
+[Volto](https://github.com/plone/volto) add-on to show public contracts in a Volto site.
 
-[![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-publiccontracts-theme%2Fdevelop&subject=develop)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-publiccontracts-theme/job/develop/display/redirect)
-[![Lines of Code](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-develop&metric=ncloc)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-develop)
-[![Coverage](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-develop&metric=coverage)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-develop)
-[![Bugs](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-develop&metric=bugs)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-develop)
-[![Duplicated Lines (%)](https://sonarqube.eea.europa.eu/api/project_badges/measure?project=volto-publiccontracts-theme-develop&metric=duplicated_lines_density)](https://sonarqube.eea.europa.eu/dashboard?id=volto-publiccontracts-theme-develop)
-
-
-[Volto](https://github.com/plone/volto) add-on
-
-## Features
-
-Demo GIF
+This addon requires to install [cs.volto.publiccontracts](https://github.com/codesyntax/cs.volto.publiccontracts) in the Plone backend.
 
 ## Getting started
 
@@ -33,6 +18,7 @@ Demo GIF
    ```
 
 1. Start Plone backend
+
    ```
    docker run -d --name plone -p 8080:8080 -e SITE=Plone -e PROFILES="profile-plone.restapi:blocks" plone
    ```
@@ -51,25 +37,25 @@ Demo GIF
 
 1. Start Volto frontend
 
-* If you already have a volto project, just update `package.json`:
+- If you already have a volto project, just update `package.json`:
 
-   ```JSON
-   "addons": [
-       "@eeacms/volto-publiccontracts-theme"
-   ],
+  ```JSON
+  "addons": [
+      "@eeacms/volto-publiccontracts-theme"
+  ],
 
-   "dependencies": {
-       "@eeacms/volto-publiccontracts-theme": "^1.0.0"
-   }
-   ```
+  "dependencies": {
+      "@eeacms/volto-publiccontracts-theme": "^1.0.0"
+  }
+  ```
 
-* If not, create one:
+- If not, create one:
 
-   ```
-   npm install -g yo @plone/generator-volto
-   yo @plone/volto my-volto-project --addon @eeacms/volto-publiccontracts-theme
-   cd my-volto-project
-   ```
+  ```
+  npm install -g yo @plone/generator-volto
+  yo @plone/volto my-volto-project --addon @eeacms/volto-publiccontracts-theme
+  cd my-volto-project
+  ```
 
 1. Install new add-ons and restart Volto:
 
