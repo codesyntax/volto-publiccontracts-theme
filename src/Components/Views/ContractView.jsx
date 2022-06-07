@@ -39,7 +39,6 @@ const ContractView = ({ content }) => {
             <>
               <div className="effective-date">
                 <span>Argitaratzen data</span>
-                <br />
                 {moment(content?.effective).format('LL')}
               </div>
             </>
@@ -49,7 +48,6 @@ const ContractView = ({ content }) => {
             <>
               <div className="file-number">
                 <span>Expediente zenbakia</span>
-                <br />
                 {content.file_number}
               </div>
             </>
@@ -59,40 +57,46 @@ const ContractView = ({ content }) => {
             <p className="documentDescription">{content.description}</p>
           )}
           {content.text && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: flattenHTMLToAppURL(content.text.data),
-              }}
-            />
+            <div className="le-testua">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: flattenHTMLToAppURL(content.text.data),
+                }}
+              />
+            </div>
           )}
-          {content.dates && (
+          {content.dates.items?.length && (
             <>
-              <h2>Datak</h2>
-              <dl>
-                {content.dates.items.map((date, index) => (
-                  <>
-                    <dt key={index}>{date.title}</dt>
-                    <dd>{moment(date?.date).format('LL')}</dd>
-                  </>
-                ))}
-              </dl>
+              <div className="le-datuak">
+                <h2>Datak</h2>
+                <dl>
+                  {content.dates.items.map((date, index) => (
+                    <>
+                      <dt key={index}>{date.title}</dt>
+                      <dd>{moment(date?.date).format('LL')}</dd>
+                    </>
+                  ))}
+                </dl>
+              </div>
             </>
           )}
-          {content.items && (
+          {content.items?.length && (
             <>
-              <h2>Fitxategiak</h2>
-              <ul>
-                {content.items.map((file, index) => (
-                  <>
-                    <li>
-                      <Icon name="file pdf outline" size="mini" />
-                      <UniversalLink href={`${file['@id']}/@@download/file`}>
-                        {file.title}
-                      </UniversalLink>
-                    </li>
-                  </>
-                ))}
-              </ul>
+              <div className="le-fitxategiak">
+                <h2>Fitxategiak</h2>
+                <ul>
+                  {content.items.map((file, index) => (
+                    <>
+                      <li>
+                        <Icon name="file pdf outline" size="mini" />
+                        <UniversalLink href={`${file['@id']}/@@download/file`}>
+                          {file.title}
+                        </UniversalLink>
+                      </li>
+                    </>
+                  ))}
+                </ul>
+              </div>
             </>
           )}
           {hasBlocksData(content) && <RenderBlocks content={content} />}
