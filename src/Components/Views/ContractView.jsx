@@ -65,7 +65,7 @@ const ContractView = ({ content }) => {
               }}
             />
           )}
-          {content.dates && (
+          {content.dates.items?.length && (
             <>
               <h2>Datak</h2>
               <dl>
@@ -78,7 +78,7 @@ const ContractView = ({ content }) => {
               </dl>
             </>
           )}
-          {content.items && (
+          {content.items?.length && (
             <>
               <h2>Fitxategiak</h2>
               <ul>
