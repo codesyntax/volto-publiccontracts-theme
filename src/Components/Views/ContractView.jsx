@@ -28,7 +28,7 @@ const ContractView = ({ content }) => {
   let lang = useSelector((state) => state.intl.locale);
   moment.locale(lang);
   return (
-    <Container className="view-wrapper grid">
+    <Container className="view-wrapper grid stackable">
       <Grid.Row>
         <Grid.Column width={1}></Grid.Column>
         <Grid.Column width={10}>
