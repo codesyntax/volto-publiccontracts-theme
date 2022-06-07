@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "@plone/scripts": "*",
-    "release-it": "^15.0.0"
+    "release-it": "^15.0.0",
+    "@eeacms/volto-react-table-widget": "0.1.2"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.9.5",
