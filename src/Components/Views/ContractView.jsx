@@ -5,14 +5,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Container, Image } from 'semantic-ui-react';
-import {
-  flattenToAppURL,
-  flattenHTMLToAppURL,
-  hasBlocksData,
-} from '@plone/volto/helpers';
+import { Grid, Container } from 'semantic-ui-react';
+import { flattenHTMLToAppURL, hasBlocksData } from '@plone/volto/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import SocialSharing from '@codesyntax/volto-social-sharing/SocialSharing';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { Icon } from 'semantic-ui-react';
@@ -23,7 +18,7 @@ import { UniversalLink } from '@plone/volto/components';
  * @params {object} content Content object.
  * @returns {string} Markup of the component.
  */
-
+import './contract.less';
 const ContractView = ({ content }) => {
   let lang = useSelector((state) => state.intl.locale);
   moment.locale(lang);
@@ -65,9 +60,9 @@ const ContractView = ({ content }) => {
               />
             </div>
           )}
-          {content.dates.items?.length && (
+          {content.dates.items?.length > 0 && (
             <>
-              <div className="le-datuak">
+              <div className="le-datak">
                 <h2>Datak</h2>
                 <dl>
                   {content.dates.items.map((date, index) => (
@@ -80,7 +75,7 @@ const ContractView = ({ content }) => {
               </div>
             </>
           )}
-          {content.items?.length && (
+          {content.items?.length > 0 && (
             <>
               <div className="le-fitxategiak">
                 <h2>Fitxategiak</h2>
