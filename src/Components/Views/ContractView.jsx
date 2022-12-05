@@ -5,8 +5,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Container } from 'semantic-ui-react';
-import { flattenHTMLToAppURL, hasBlocksData } from '@plone/volto/helpers';
+import { Grid, Container, Image } from 'semantic-ui-react';
+import {
+  flattenToAppURL,
+  flattenHTMLToAppURL,
+  hasBlocksData,
+} from '@plone/volto/helpers';
+import { useIntl } from 'react-intl';
+import messages from 'volto-publiccontracts-theme/components/Utils/messages.js';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
@@ -22,6 +28,7 @@ import './contract.less';
 const ContractView = ({ content }) => {
   let lang = useSelector((state) => state.intl.locale);
   moment.locale(lang);
+  const intl = useIntl();
   return (
     <Container className="view-wrapper grid stackable">
       <Grid.Row>
@@ -33,7 +40,8 @@ const ContractView = ({ content }) => {
           {content.effective && (
             <>
               <div className="effective-date">
-                <span>Argitaratzen data</span>
+                <span>{intl.formatMessage(messages.publicationDate)}</span>
+                <br />
                 {moment(content?.effective).format('LL')}
               </div>
             </>
@@ -42,7 +50,8 @@ const ContractView = ({ content }) => {
           {content.file_number && (
             <>
               <div className="file-number">
-                <span>Expediente zenbakia</span>
+                <span>{intl.formatMessage(messages.proceedingsNumber)}</span>
+                <br />
                 {content.file_number}
               </div>
             </>
@@ -62,36 +71,32 @@ const ContractView = ({ content }) => {
           )}
           {content.dates.items?.length > 0 && (
             <>
-              <div className="le-datak">
-                <h2>Datak</h2>
-                <dl>
-                  {content.dates.items.map((date, index) => (
-                    <>
-                      <dt key={index}>{date.title}</dt>
-                      <dd>{moment(date?.date).format('LL')}</dd>
-                    </>
-                  ))}
-                </dl>
-              </div>
+              <h2>{intl.formatMessage(messages.dates)}</h2>
+              <dl>
+                {content.dates.items.map((date, index) => (
+                  <>
+                    <dt key={index}>{date.title}</dt>
+                    <dd>{moment(date?.date).format('LL')}</dd>
+                  </>
+                ))}
+              </dl>
             </>
           )}
           {content.items?.length > 0 && (
             <>
-              <div className="le-fitxategiak">
-                <h2>Fitxategiak</h2>
-                <ul>
-                  {content.items.map((file, index) => (
-                    <>
-                      <li>
-                        <Icon name="file pdf outline" size="mini" />
-                        <UniversalLink href={`${file['@id']}/@@download/file`}>
-                          {file.title}
-                        </UniversalLink>
-                      </li>
-                    </>
-                  ))}
-                </ul>
-              </div>
+              <h2>{intl.formatMessage(messages.files)}</h2>
+              <ul>
+                {content.items.map((file, index) => (
+                  <>
+                    <li>
+                      <Icon name="file pdf outline" size="mini" />
+                      <UniversalLink href={`${file['@id']}/@@download/file`}>
+                        {file.title}
+                      </UniversalLink>
+                    </li>
+                  </>
+                ))}
+              </ul>
             </>
           )}
           {hasBlocksData(content) && <RenderBlocks content={content} />}
