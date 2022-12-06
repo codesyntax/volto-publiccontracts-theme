@@ -12,7 +12,7 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers';
 import { useIntl } from 'react-intl';
-import messages from 'volto-publiccontracts-theme/Components/Utils/messages.js';
+import messages from '../Utils/messages.js';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
