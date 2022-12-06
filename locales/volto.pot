@@ -1,0 +1,34 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"POT-Creation-Date: 2022-12-06T07:55:36.846Z\n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: volto\n"
+
+#: Components/Utils/messages
+# defaultMessage: Dates
+msgid "dates"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Files
+msgid "files"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Proceedings number
+msgid "proceedingsNumber"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Publication Date
+msgid "publicationDate"
+msgstr ""

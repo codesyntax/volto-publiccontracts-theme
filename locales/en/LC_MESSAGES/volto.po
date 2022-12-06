@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: Components/Utils/messages
+# defaultMessage: Dates
+msgid "dates"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Files
+msgid "files"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Proceedings number
+msgid "proceedingsNumber"
+msgstr ""
+
+#: Components/Utils/messages
+# defaultMessage: Publication Date
+msgid "publicationDate"
+msgstr ""
