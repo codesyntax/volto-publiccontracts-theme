@@ -33,7 +33,7 @@ const ContractView = ({ content }) => {
           {content.title && (
             <h1 className="documentFirstHeading">{content.title}</h1>
           )}
-          {content?.effective && (
+          {content.effective && (
             <>
               <div className="effective-date">
                 <span>{intl.formatMessage(messages.publicationDate)}</span>
@@ -65,20 +65,19 @@ const ContractView = ({ content }) => {
               />
             </div>
           )}
-          {content.dates.items?.length > 0 &&
-            content.dates.items[0]?.date !== '' && (
-              <>
-                <h2>{intl.formatMessage(messages.dates)}</h2>
-                <dl>
-                  {content.dates.items.map((date, index) => (
-                    <>
-                      <dt key={index}>{date.title}</dt>
-                      <dd>{moment(date?.date).format('LL')}</dd>
-                    </>
-                  ))}
-                </dl>
-              </>
-            )}
+          {content.dates.items?.some((item) => item.date !== '') && (
+            <>
+              <h2>{intl.formatMessage(messages.dates)}</h2>
+              <dl>
+                {content.dates.items.map((date, index) => (
+                  <>
+                    <dt key={index}>{date.title}</dt>
+                    <dd>{moment(date?.date).format('LL')}</dd>
+                  </>
+                ))}
+              </dl>
+            </>
+          )}
           {content.items?.length > 0 && (
             <>
               <h2>{intl.formatMessage(messages.files)}</h2>
