@@ -5,12 +5,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Container, Image } from 'semantic-ui-react';
-import {
-  flattenToAppURL,
-  flattenHTMLToAppURL,
-  hasBlocksData,
-} from '@plone/volto/helpers';
+import { Grid, Container } from 'semantic-ui-react';
+import { flattenHTMLToAppURL, hasBlocksData } from '@plone/volto/helpers';
 import { useIntl } from 'react-intl';
 import messages from '../Utils/messages.js';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
@@ -69,7 +65,7 @@ const ContractView = ({ content }) => {
               />
             </div>
           )}
-          {content.dates.items?.length > 0 && (
+          {content.dates.items?.some((item) => item.date !== '') && (
             <>
               <h2>{intl.formatMessage(messages.dates)}</h2>
               <dl>
